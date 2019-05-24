@@ -1,0 +1,40 @@
+// noinspection NonAsciiCharacters
+/**
+ * 省份 name -> id
+ */
+export default {
+    "澳门": "MAC",
+    "宁夏": "NXA",
+    "广东": "GUD",
+    "甘肃": "GAN",
+    "广西": "GXI",
+    "安徽": "ANH",
+    "香港": "HKG",
+    "福建": "FUJ",
+    "北京": "BEJ",
+    "河南": "HEN",
+    "云南": "YUN",
+    "新疆": "XIN",
+    "陕西": "SHA",
+    "辽宁": "LIA",
+    "四川": "SCH",
+    "吉林": "JIL",
+    "江苏": "JSU",
+    "青海": "QIH",
+    "海南": "HAI",
+    "上海": "SHH",
+    "河北": "HEB",
+    "黑龙江": "HLJ",
+    "山西": "SHX",
+    "西藏": "TIB",
+    "天津": "TAJ",
+    "贵州": "GUI",
+    "台湾": "TAI",
+    "湖北": "HUB",
+    "山东": "SHD",
+    "重庆": "CHQ",
+    "江西": "JXI",
+    "湖南": "HUN",
+    "浙江": "ZHJ",
+    "内蒙古": "NMG"
+}
