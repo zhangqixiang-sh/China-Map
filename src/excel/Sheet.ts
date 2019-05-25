@@ -3,12 +3,12 @@ import {number} from "prop-types";
 
 export default class Sheet {
 
-    private readonly sheet: WorkSheet;
+    public ws: WorkSheet;
     private range: Range;
 
-    constructor(sheet: WorkSheet) {
-        this.sheet = sheet
-        this.range = xutils.decode_range(sheet["!ref"] + '')
+    constructor(ws: WorkSheet) {
+        this.ws = ws
+        this.range = xutils.decode_range(ws["!ref"] + '')
     }
 
     /**
@@ -40,8 +40,8 @@ export default class Sheet {
 
     private putValue(c, r, array: ValueArray) {
         let ref = xutils.encode_cell({c: c, r: r})
-        if (this.sheet[ref]) {
-            let value = this.sheet[ref].v
+        if (this.ws[ref]) {
+            let value = this.ws[ref].v
             let num = this.parseNum(value)
             if (typeof  num === 'number') {
                 array.push(num)
