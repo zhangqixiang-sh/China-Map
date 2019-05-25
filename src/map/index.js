@@ -34,7 +34,7 @@ class ChinaMap extends Component {
 
 
     componentWillReceiveProps(nextProps) {
-        console.log('ChinaMap receive props=', nextProps)
+        console.log('map receive data=', nextProps.dataSource)
         this.drawer.style("fill", item => nextProps.dataSource[item.id].color)
     }
 
