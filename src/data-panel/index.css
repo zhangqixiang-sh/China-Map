@@ -1,14 +1,11 @@
-.config {
-    height: 100vh;
-    width: 400px;
+.data-panel {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    overflow-y: scroll;
     padding: 8px 10px;
 }
 
-.config .file {
+.data-panel .file {
     width: 100%;
     height: 300px;
     background: #e6eef5;

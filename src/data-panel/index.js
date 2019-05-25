@@ -10,7 +10,7 @@ import ValueTable from "../table";
 
 const getColor = d3.interpolate("#ffffcc", "#800026")
 
-class ConfigPanel extends Component {
+class DataPanel extends Component {
 
     static propTypes = {
         onGetData: PropTypes.func.isRequired
@@ -20,7 +20,7 @@ class ConfigPanel extends Component {
         tableData: []
     }
 
-    sampleXlsxUrl = "https://github.com/ZhangQixiangChina/China-Map/raw/master/src/assets/sample.xlsx"
+    sampleUrl = "https://github.com/ZhangQixiangChina/China-Map/raw/master/src/assets/sample.xlsx"
 
 
     constructor(props) {
@@ -31,17 +31,17 @@ class ConfigPanel extends Component {
 
     render() {
         return (
-            <div className="config">
+            <div className="data-panel">
 
                 <h4>Step1.</h4>
                 <p>
                     &emsp;
-                    <a href={this.sampleXlsxUrl}>下载标准样例表格</a>
+                    <a href={this.sampleUrl}>下载标准样例表格</a>
                     <span style={{color: "#333333"}}>, 把你的数据填入替换掉样例表格的数据, 注意不要修改表格的其他地方。</span>
                 </p>
 
                 <h4>Step2.</h4>
-                <div style={{height: 200, marginTop: 10}}>
+                <div style={{height: 180}}>
                     <FilePicker onGetFile={this.onGetFile}/>
                 </div>
 
@@ -96,4 +96,4 @@ class ConfigPanel extends Component {
 
 }
 
-export default ConfigPanel
+export default DataPanel

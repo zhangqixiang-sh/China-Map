@@ -2,9 +2,9 @@ import React, {Component} from 'react'
 
 import './App.css';
 import ChinaMap from "./map";
-import ConfigPanel from "./right";
 import {Button} from 'antd'
 import {saveSvgAsPng} from 'save-svg-as-png'
+import SettingTabs from "./tabs/index";
 
 
 class App extends Component {
@@ -34,9 +34,7 @@ class App extends Component {
                 </div>
 
                 <div className="app-config-container">
-
-                    <ConfigPanel onGetData={this.onGetData}/>
-
+                    <SettingTabs onGetData={this.onGetData}/>
                 </div>
 
 

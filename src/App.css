@@ -16,5 +16,8 @@
 }
 
 .app-config-container {
+    width: 400px;
     border-left: 1px solid #cccccc;
+    height: 100vh;
+    overflow-y: scroll;
 }
