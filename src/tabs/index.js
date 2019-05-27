@@ -11,8 +11,13 @@ const Panel = Tabs.TabPane
 export default class SettingTabs extends Component {
 
     static propTypes = {
-        onGetData:PropTypes.func.isRequired
+        onGetData: PropTypes.func.isRequired
     }
+
+    state = {
+        colorSetting: {}
+    }
+
 
     constructor(props) {
         super(props);
@@ -32,20 +37,26 @@ export default class SettingTabs extends Component {
     render() {
         return (
             <StickyContainer>
-                    <Tabs renderTabBar={this.renderTabBar}>
+                <Tabs renderTabBar={this.renderTabBar}>
 
-                        <Panel tab="数据导入" key="1">
-                                <DataPanel onGetData={this.props.onGetData}/>
-                        </Panel>
+                    <Panel tab="数据导入" key="1">
+                        <DataPanel onGetData={this.props.onGetData} colorSetting={this.state.colorSetting}/>
+                    </Panel>
 
-                        <Panel tab="颜色配置" key="2">
-                                <ColorPanel/>
-                        </Panel>
+                    <Panel tab="颜色配置" key="2">
+                        <ColorPanel onConfirmColor={this.onConfirmColor}/>
+                    </Panel>
 
-                    </Tabs>
+                </Tabs>
             </StickyContainer>
 
         );
+    }
+
+    onConfirmColor = setting => {
+        this.setState({
+            colorSetting: setting
+        })
     }
 
 }

@@ -10,7 +10,7 @@ import SettingTabs from "./tabs/index";
 class App extends Component {
 
     state = {
-        dataSource: {}
+        dataSource: {},
     }
 
     constructor(props) {
@@ -26,7 +26,7 @@ class App extends Component {
 
                 <div className="app-map-container">
                     <div style={{marginTop: 50, marginRight: 50}}>
-                        <ChinaMap dataSource={this.state.dataSource}/>
+                        <ChinaMap dataSource={this.state.dataSource} />
                     </div>
                     <div style={{marginTop: 120, marginBottom: 40}}>
                         <Button onClick={this.onSavePngClick}>点击下载png</Button>
@@ -43,6 +43,7 @@ class App extends Component {
     }
 
     onGetData(mapData) {
+
         this.setState({
             dataSource: mapData
         })

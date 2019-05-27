@@ -7,13 +7,13 @@ import province from './province'
 import * as d3 from "d3";
 import PropTypes from 'prop-types'
 import ValueTable from "../table";
-
-const getColor = d3.interpolate("#ffffcc", "#800026")
+import {DEFAULT_MAX_COLOR, DEFAULT_MIN_COLOR} from "../consts/consts";
 
 class DataPanel extends Component {
 
     static propTypes = {
-        onGetData: PropTypes.func.isRequired
+        onGetData: PropTypes.func.isRequired,
+        colorSetting: PropTypes.object
     }
 
     state = {
@@ -30,6 +30,7 @@ class DataPanel extends Component {
 
 
     render() {
+        console.log('data panel render')
         return (
             <div className="data-panel">
 
@@ -61,7 +62,7 @@ class DataPanel extends Component {
         let values = sheet.getColumn(1).slice(1) //去掉第一个
         values.sort((a, b) => a - b)
         // let minVal = values[0]
-        let maxVal = values[values.length - 1]
+        this.maxVal = values[values.length - 1]
         let mapData = {}
         let tableData = []
         sheet.getRows()
@@ -70,7 +71,7 @@ class DataPanel extends Component {
                     let pname = row[0]
                     let pvalue = row[1]
                     let pid = province[pname]
-                    let pcolor = getColor(pvalue / maxVal)
+                    let pcolor = this.getColor(pvalue / this.maxVal)
 
                     mapData[pid] = {
                         value: pvalue,
@@ -85,13 +86,39 @@ class DataPanel extends Component {
                 }
             })
 
+        this.mapData = mapData
         this.props.onGetData(mapData)
-
         this.setState({
             tableData: tableData
         })
 
     }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.colorSetting &&
+            Object.keys(nextProps.colorSetting).length > 0 &&
+            (!this.props.colorSetting ||
+                nextProps.colorSetting.minColor !== this.props.colorSetting.minColor ||
+                nextProps.colorSetting.maxColor !== this.props.colorSetting.maxColor)) {
+            console.log('color change : ', nextProps.colorSetting)
+            this.getColor = d3.interpolate(nextProps.colorSetting.minColor, nextProps.colorSetting.maxColor);
+
+            if (this.mapData) {
+                Object.keys(this.mapData).forEach(key => {
+                    let pitem = this.mapData[key]
+                    pitem.color = this.getColor(pitem.value / this.maxVal)
+                    this.mapData[key] = pitem
+                })
+
+                this.props.onGetData(this.mapData)
+
+            }
+
+        }
+
+    }
+
+    getColor = d3.interpolate(DEFAULT_MIN_COLOR, DEFAULT_MAX_COLOR)
 
 
 }

@@ -25,7 +25,7 @@ export default class FilePicker extends Component {
                 </p>
                 <p className="ant-upload-text">将你刚刚填好表格文件拖到这里, 或点击选择文件</p>
                 <p className="ant-upload-hint">
-                    支持 xls, xlsx, csv 格式
+                    支持 xls, xlsx 格式
                 </p>
             </Dragger>
 

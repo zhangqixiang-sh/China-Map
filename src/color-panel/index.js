@@ -1,16 +1,22 @@
 import React, {Component} from 'react'
 import './index.css'
-import {Input,Button} from 'antd'
+import {Button, Input} from 'antd'
+import PropTypes from 'prop-types'
+import {DEFAULT_MAX_COLOR, DEFAULT_MIN_COLOR} from "../consts/consts";
 
 export default class ColorPanel extends Component {
+
+    static propTypes = {
+        onConfirmColor: PropTypes.func.isRequired
+    }
 
     constructor(props) {
         super(props);
     }
 
     state = {
-        minColor: "#ffffcc",
-        maxColor: "#800020"
+        minColor: DEFAULT_MIN_COLOR,
+        maxColor: DEFAULT_MAX_COLOR
     }
 
 
@@ -63,7 +69,7 @@ export default class ColorPanel extends Component {
                 </div>
 
 
-                <Button  type="primary" onClick={this.onConfirm}>确定</Button>
+                <Button type="primary" onClick={this.onConfirm}>确定</Button>
 
 
             </div>
@@ -87,8 +93,11 @@ export default class ColorPanel extends Component {
 
     }
 
-    onConfirm = ()=>{
-
+    onConfirm = () => {
+        this.props.onConfirmColor({
+            minColor: this.state.minColor,
+            maxColor: this.state.maxColor
+        })
     }
 
 
