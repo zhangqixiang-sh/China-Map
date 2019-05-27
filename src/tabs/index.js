@@ -38,7 +38,7 @@ export default class SettingTabs extends Component {
                                 <DataPanel onGetData={this.props.onGetData}/>
                         </Panel>
 
-                        <Panel tab="颜色配置">
+                        <Panel tab="颜色配置" key="2">
                                 <ColorPanel/>
                         </Panel>
 
