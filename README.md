@@ -1,44 +1,27 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 数据可视化小工具---中国地图
+> 如果你需要在一张中国地图上, 用不同深浅的颜色来表示各省的不同数据, (如 GDP, 森林覆盖率等等数据), 那么, 这个小工具可以帮你快速完成
 
-## Available Scripts
+![](./src/assets/cn-map.png)
 
-In the project directory, you can run:
+### 兼容性
+必须使用现代浏览器打开(IE无效), 仅在Chrome和Safari上测试过, 建议使用Chrome打开
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 在线版
+直接访问 <a>https://zhangqixiangchina.github.io/China-Map/</a>
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### 本地版
 
-### `npm test`
+- 命令行下载(先确保你安装了[Git](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git))
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+	```
+	git clone https://github.com/ZhangQixiangChina/China-Map.git
+	cd China-Map
+	git checkout gh-pages
+	```
+	接着直接点击`index.html`来打开页面
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 直接下载
+	1. 本页面左上方, 切换[Branch:master] 至 [Branch:gh-pages]
+	2. 点击右上方[Clone or download], 接着点击[Download ZIP]
+	3. 解压下载下来的压缩包, 点击`index.html`打开页面
