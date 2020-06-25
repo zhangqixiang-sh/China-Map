@@ -25,9 +25,7 @@ class App extends Component {
             <div className="app-contaienr">
 
                 <div className="app-map-container">
-                    <div style={{marginTop: 50, marginRight: 50}}>
-                        <ChinaMap dataSource={this.state.dataSource} />
-                    </div>
+                    <ChinaMap dataSource={this.state.dataSource} style={{marginTop: 50, marginRight: 50}}/>
                     <div style={{marginTop: 120, marginBottom: 40}}>
                         <Button onClick={this.onSavePngClick}>点击下载png</Button>
                     </div>

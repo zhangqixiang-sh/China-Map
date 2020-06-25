@@ -10,9 +10,18 @@ class ChinaMap extends Component {
         dataSource: PropTypes.object.isRequired
     }
 
+    static defaultProps = {
+        style: {}
+    }
+
+
+
     render() {
         return (
-            <svg id="cn-map" width="560" height="470"/>
+            <div style={this.props.style}>
+                <svg id="cn-map" width="560" height="470"/>
+            </div>
+
         );
     }
 
