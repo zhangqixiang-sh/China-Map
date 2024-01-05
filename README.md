@@ -4,24 +4,13 @@
 ![](./src/assets/cn-map.png)
 
 ### 兼容性
-必须使用现代浏览器打开(IE无效), 仅在Chrome和Safari上测试过, 建议使用Chrome打开
+仅在Chrome和Safari上测试过, 建议使用Chrome打开
 
 
 ### 在线版
-直接访问 <a>https://zhangqixiangchina.github.io/China-Map/</a>
+<a>https://zhangqixiang-sh.github.io/China-Map/</a>
 
-### 本地版
-
-- 命令行下载(先确保你安装了[Git](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git))
-
-	```
-	git clone https://github.com/ZhangQixiangChina/China-Map.git
-	cd China-Map
-	git checkout gh-pages
-	```
-	接着直接点击`index.html`来打开页面
-
-- 直接下载
-	1. 本页面左上方, 切换[Branch:master] 至 [Branch:gh-pages]
-	2. 点击右上方[Clone or download], 接着点击[Download ZIP]
-	3. 解压下载下来的压缩包, 点击`index.html`打开页面
+### 本地下载版
+1. 切换分支至 gh-pages
+2. 点击[Download ZIP]
+3. 解压下载下来的压缩包, 点击`index.html`打开页面
